@@ -4431,7 +4431,7 @@ function acceptInvite(e) {
             }
             return openAutoGuestModal(o, (function(e, t) {
                     e && $.ajax({
-                        url: window.location.origin + "/template/invent/userinvent.php",
+                        url: "template/invent/userinvent.php",
                         data: {
                             Action: "autoGuestSave",
                             user_id: user_id,
@@ -4530,7 +4530,7 @@ function acceptInvite(e) {
                 showTextAgreeAnim(),
                 e = 1;
         n && "1" != n && $.ajax({
-            url: window.location.origin + "/template/invent/userinvent.php",
+            url: "template/invent/userinvent.php",
             data: {
                 Action: "guestAgree",
                 answer: e,
@@ -4644,18 +4644,17 @@ if (getUrlVar().user || getUrlVar().style_id || void 0 === getUrlVar().mydomain 
             guest_id = 1
     }
 else if (!(window.location.origin.indexOf("localhost") + 1 || window.location.origin.indexOf(":3000") + 1) && (mydomain = void 0 !== getUrlVar().mydomain ? getUrlVar().mydomain : window.location.hostname,
-    $.ajax({
-        url: window.location.origin + "/template/invent/userinvent.php",
-        data: {
-            Action: "getIDbyDomain",
-            mydomain: mydomain
-        },
-        type: "post",
-        async: !1,
-        success: function(e) {
-            e ? user_id = e : window.location.href = "https://weddingpost.ru/404.html"
+    (function() {
+        var _xhr = new XMLHttpRequest();
+        _xhr.open("GET", "template/invent/userinvent.php", false);
+        _xhr.send();
+        if (_xhr.status === 200) {
+            var _data = JSON.parse(_xhr.responseText);
+            _data && _data.user_id ? user_id = _data.user_id : window.location.href = "https://weddingpost.ru/404.html";
+        } else {
+            window.location.href = "https://weddingpost.ru/404.html";
         }
-    }),
+    })(),
 document.location.pathname.length > 1))
     var path, guest_id = (path = document.location.pathname.match(/\/[^\D]+/g))[0].slice(1);
 user_id = ("" + (user_id || "")).replace(/\?\d+$/, ""),
@@ -4920,20 +4919,13 @@ function startPreviewAutoScroll() {
 function getInvs(e, t, n) {
     var o;
     o = "simulate" === getUrlVar().mode || "preview" === getUrlVar().mode ? getUrlVar().paper && "underfined" != getUrlVar().paper ? getUrlVar().paper : 0 : getUrlVar().mode ? getUrlVar().mode : getUrlVar().paper && "underfined" != getUrlVar().paper ? getUrlVar().paper : 0,
-        $.ajax({
-            url: window.location.origin + "/template/invent/userinvent.php",
-            data: {
-                Action: "getInv",
-                user_id: e,
-                guest: t,
-                type: n,
-                style_id: getUrlVar().style_id,
-                screenshot: getUrlVar().screenshot,
-                backup_id: getUrlVar().backup_id || "",
-                mode: o
-            },
-            type: "post",
-            complete: function(e) {
+        fetch("template/invent/userinvent.php").then((function(e) { return e.json() })).then((function(t) {
+            successCallback_local(t, n, e);
+        })).catch((function(e) {
+            console.error("Failed to load userinvent.php:", e);
+        }));
+    function successCallback_local(t, n, e) {
+        var _completeFn = function() {
                 getUrlVar().opros_result || getUrlVar().show_comment || "electro" != n || (window.self === window.top && (document.body.setAttribute("type", "instant_electro"),
                     updateInventMobBack()),
                     requestAnimationFrame((function() {
@@ -4946,8 +4938,7 @@ function getInvs(e, t, n) {
                             ))
                         }
                     )))
-            },
-            success: function(t) {
+        };
                 if (invOtherGuests = t.inv_other_guests && Array.isArray(t.inv_other_guests) ? t.inv_other_guests : [],
                 "" != t.userdata) {
                     usercontent = JSON.parse(t.userdata),
@@ -5284,7 +5275,7 @@ function getInvs(e, t, n) {
                         } else
                             $(".sheet#seatingPlan [action=seatingplan_text]").text("Иванов Иван<br>Иванов Сергей<br>Сергеева Ольга<br>Романов Мирон<br>Миронова Анна<br>Антонов Семен<br>"),
                                 $.ajax({
-                                    url: window.location.origin + "/template/invent/userinvent.php",
+                                    url: "template/invent/userinvent.php",
                                     data: {
                                         Action: "seatingPlan",
                                         table: tbl,
@@ -5416,7 +5407,7 @@ function getInvs(e, t, n) {
                         $("#opros").css("max-width", "1128px"),
                         $(".hideFromBuild").first().after('<div class="commentYes" style="max-width: 1128px; margin: 20px;"><b>Опрос выключен в конструкторе</b><br> Чтобы гости могли проходить опрос <a style="text-decoration: underline;" href="/cabinet/constructor/electro/">перейдите в конструктор</a> и включите модуль Опрос.</div>'),
                         $.ajax({
-                            url: window.location.origin + "/template/invent/userinvent.php",
+                            url: "template/invent/userinvent.php",
                             data: {
                                 Action: "getResultOpros",
                                 guest: guest_id,
@@ -5546,9 +5537,9 @@ function getInvs(e, t, n) {
                     user_id: e,
                     guest_id: guest_id
                 }),
-                "electro" !== n || $(".content").hasClass("hide") || window.initGuestBelowMymainAnimations && window.initGuestBelowMymainAnimations()
-            }
-        })
+                "electro" !== n || $(".content").hasClass("hide") || window.initGuestBelowMymainAnimations && window.initGuestBelowMymainAnimations(),
+            _completeFn();
+    }
 }
 function buildMoneyGiftLink(e, t, n) {
     var o = e || ""
@@ -5797,7 +5788,7 @@ $(document).ready((function() {
                             }
                             return void openAutoGuestModal(r, (function(e, t) {
                                     e && $.ajax({
-                                        url: window.location.origin + "/template/invent/userinvent.php",
+                                        url: "template/invent/userinvent.php",
                                         data: {
                                             Action: "autoGuestSave",
                                             user_id: user_id,
@@ -5809,7 +5800,7 @@ $(document).ready((function() {
                                         type: "post",
                                         success: function(e) {
                                             e ? $.ajax({
-                                                url: window.location.origin + "/template/invent/userinvent.php",
+                                                url: "template/invent/userinvent.php",
                                                 data: {
                                                     Action: "saveComment",
                                                     guest: e,
@@ -5829,7 +5820,7 @@ $(document).ready((function() {
                             ))
                         }
                         $.ajax({
-                            url: window.location.origin + "/template/invent/userinvent.php",
+                            url: "template/invent/userinvent.php",
                             data: {
                                 Action: "saveComment",
                                 guest: guest_id,
@@ -5903,7 +5894,7 @@ $(document).ready((function() {
                             }
                         )),
                             $.ajax({
-                                url: window.location.origin + "/template/invent/userinvent.php",
+                                url: "template/invent/userinvent.php",
                                 data: {
                                     Action: "guestOpros",
                                     guest: guest_id,
