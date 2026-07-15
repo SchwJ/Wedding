@@ -10,6 +10,21 @@ html {
     -ms-text-size-adjust: 100%
 }
 
+@font-face {
+    font-family: VenskiSad;
+    src: url(../../cabinet/constructor/font/venski-sad-two-medium.woff) format('woff'),url(../../cabinet/constructor/font/venski-sad-two-medium.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto
+}
+@font-face {
+    font-family: Mon-amour-two;
+    src: url(../../cabinet/constructor/font/mon-amour-two.woff) format('woff'),url(../../cabinet/constructor/font/vmon-amour-two.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto
+}
+
 body {
     margin: 0
 }
