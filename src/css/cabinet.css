@@ -14934,7 +14934,7 @@ a {
 }
 
 #screen .dazzle {
-    margin-top: 60px
+    /*margin-top: 60px*/
 }
 
 #screen .mymenu {
@@ -26143,11 +26143,11 @@ i.check {
 }
 
 .dazzle {
-    width: 100%;
-    background-image: url(../img/nopay_en.png);
-    position: absolute;
-    z-index: 111;
-    opacity: .3
+    /*width: 100%;*/
+    /*background-image: url(../img/nopay_en.png);*/
+    /*position: absolute;*/
+    /*z-index: 111;*/
+    /*opacity: .3*/
 }
 
 .bottomPaperFade {
@@ -34673,7 +34673,7 @@ body.recover-modal-open {
 }
 
 [lang=ru] .dazzle {
-    background-image: url(../img/nopay.png)
+    /*background-image: url(../img/nopay.png)*/
 }
 
 [lang=ru] .bride-academy-list {
