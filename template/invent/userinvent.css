@@ -189,7 +189,7 @@ a {
     overflow: initial!important
 }
 
-.addsBoxInside,.hoverborderGroup,.repeatControl,.somecontrol {
+#blockWidthIsland,#constructorIslandBar,#photoGridIsland,#textColsIsland,.addsBoxInside,.hoverborderGroup,.invBandAnno,.repeatControl,.somecontrol {
     display: none
 }
 
@@ -422,6 +422,30 @@ body[type=instant_electro] .group_fixed_view .mymain-scroll-hint-btn .mymain-scr
     backdrop-filter: blur(7px) saturate(140%)
 }
 
+body[type=instant_electro] #screen {
+    overflow-x: visible
+}
+
+body[type=instant_electro] .content {
+    overflow-x: clip
+}
+
+body[type=instant_electro] #screen .textBox {
+    overflow: visible
+}
+
+body[type=instant_electro] #screen .moveBox[type=calendar],body[type=instant_electro] #screen .moveBox[type=img],body[type=instant_electro] #screen .moveBox[type=link],body[type=instant_electro] #screen .moveBox[type=text] {
+    overflow: visible;
+    min-width: 0
+}
+
+body[type=instant_electro] #screen .subTextLine,body[type=instant_electro] #screen .textLine[contenteditable]:not(.subTextLine) {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere
+}
+
 .textLine.noBorder {
     border: 0 solid transparent!important
 }
@@ -435,11 +459,96 @@ body[type=instant_electro] .group_fixed_view .mymain-scroll-hint-btn .mymain-scr
 }
 
 #mymain .textBox .moveBox[type=img] .textLine,#mymain .textBox .textLine:has(>img.BGPlace) {
-    animation: appearPhoto 2.5s 1 cubic-bezier(.215,.61,.355,1) .5s backwards
+    animation: none
 }
 
-#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=zoom-in],#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=zoom-in] {
-    animation: appearPhoto 2s 1 cubic-bezier(.215,.61,.355,1) 0s backwards
+#mymain .textBox .moveBox[type=img] .textLine>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)>img.BGPlace {
+    display: block;
+    transform-origin: center center;
+    animation: appearHeartRevers 2.5s 1 cubic-bezier(.215,.61,.355,1) .5s backwards
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=zoom-in]>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=zoom-in]>img.BGPlace {
+    animation: appearHeart 2s 1 cubic-bezier(.215,.61,.355,1) 0s backwards
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=fade],#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=fade] {
+    animation: appearColor 2.5s 1 cubic-bezier(.215,.61,.355,1) .5s backwards
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=fade]>img.BGPlace,#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-bottom]>img.BGPlace,#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-left]>img.BGPlace,#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-right]>img.BGPlace,#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-top]>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=fade]>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-bottom]>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-left]>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-right]>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-top]>img.BGPlace {
+    animation: none
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-left],#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-left] {
+    animation: appearFromLeft 2.5s 1 cubic-bezier(.215,.61,.355,1) .5s backwards
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-right],#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-right] {
+    animation: appearFromRight 2.5s 1 cubic-bezier(.215,.61,.355,1) .5s backwards
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-bottom],#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-bottom] {
+    animation: appearPhotoFromBottom 2.5s 1 cubic-bezier(.215,.61,.355,1) .5s backwards
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=from-top],#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=from-top] {
+    animation: appearPhotoFromTop 2.5s 1 cubic-bezier(.215,.61,.355,1) .5s backwards
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=none],#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=none] {
+    animation: none!important
+}
+
+#mymain .textBox .moveBox[type=img] .textLine[data-anim-type=none]>img.BGPlace,#mymain .textBox .textLine:has(>img.BGPlace)[data-anim-type=none]>img.BGPlace {
+    animation: none!important
+}
+
+.moveBox.moduleLine[moduleLineType=photo] {
+    display: flex!important;
+    float: none!important;
+    gap: 8px;
+    align-items: flex-start;
+    width: auto
+}
+
+.moveBox.moduleLine[moduleLineType=photo]>.moveBox[type=img] {
+    flex: 1 1 0;
+    min-width: 0;
+    float: none!important;
+    overflow: hidden
+}
+
+.moveBox.moduleLine[moduleLineType=photo] .textLine {
+    float: none!important;
+    width: 100%!important;
+    margin-left: 0!important;
+    margin-right: 0!important
+}
+
+.moveBox.moduleLine[moduleLineType=photo] img.BGPlace {
+    width: 100%!important;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: auto
+}
+
+.textLine.textLine--multi-col {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 7%;
+    align-items: flex-start;
+    min-width: 0;
+    box-sizing: border-box
+}
+
+.textLine.textLine--multi-col .textCol {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere
 }
 
 #mymain .textBox .textLine.calendarWrap {
@@ -509,11 +618,17 @@ body[type=instant_electro] .group_fixed_view .mymain-scroll-hint-btn .mymain-scr
 }
 
 #myinv .textBox .textLine.myinv-revealed.myinv-reveal--text {
-    animation: myinv-text-in .4s ease both
+    animation: myinv-text-in .4s ease backwards
 }
 
 #myinv .textBox .textLine.myinv-revealed.myinv-reveal--img {
-    animation: myinv-icon-in .9s cubic-bezier(.16,1,.3,1) both
+    animation: none
+}
+
+#myinv .textBox .textLine.myinv-revealed.myinv-reveal--img>img.BGPlace {
+    display: block;
+    transform-origin: center center;
+    animation: myinv-icon-in .9s cubic-bezier(.16,1,.3,1) backwards
 }
 
 .hideFromBuild {
@@ -725,7 +840,7 @@ body {
     z-index: 0;
     border-radius: 999px!important;
     border: 1px solid color-mix(in srgb,var(--btn-color) 74%,#000 26%)!important;
-    overflow: hidden;
+    overflow: visible;
     background-color: var(--btn-color)!important;
     background-image: linear-gradient(180deg,color-mix(in srgb,var(--btn-color) 82%,#fff 18%) 0,var(--btn-color) 55%,color-mix(in srgb,var(--btn-color) 76%,#000 24%) 100%)!important;
     box-shadow: 0 14px 28px color-mix(in srgb,var(--btn-color) 28%,transparent),0 3px 0 color-mix(in srgb,var(--btn-color) 30%,#fff 70%) inset,0 -4px 0 color-mix(in srgb,var(--btn-color) 66%,#000 34%) inset;
@@ -805,6 +920,12 @@ body {
     }
 }
 
+#myinv[withoutmobile_margin="1"] .textBox[textplace=back_text]>.moveBox.moduleLine>.module.block#opros {
+    position: relative;
+    width: 124%;
+    margin-left: -12%
+}
+
 @media (min-width: 514px) {
     #screen .plate_box.plate-design {
         width:100%!important;
@@ -847,36 +968,43 @@ body {
     }
 
     #screen .bigPalitra .colors {
-        width: 349px
+        width: 100%
     }
 
     #screen .bigPalitra .colors .color {
-        height: 50px!important;
-        width: 50px!important
+        width: 12%;
+        aspect-ratio: 1;
+        height: auto!important
     }
 }
 
 .bigPalitra {
-    margin: -3% -30px
+    margin: -3% -8%
 }
 
 .bigPalitra:not([data-palitra-view]) .colors,.bigPalitra[data-palitra-view=circles] .colors {
-    gap: 12px
+    gap: 2.5%
 }
 
 .bigPalitra:not([data-palitra-view]) .colors .color,.bigPalitra[data-palitra-view=circles] .colors .color {
     border-radius: 40px;
-    margin: 0
+    margin: 0;
+    width: 12%;
+    aspect-ratio: 1;
+    height: auto!important
 }
 
 .bigPalitra[data-palitra-view=squares] .colors {
-    gap: 2px;
-    padding: 12px
+    gap: .5%;
+    padding: 2.5%
 }
 
 .bigPalitra[data-palitra-view=squares] .colors .color {
     border-radius: 8px;
     margin: 0;
+    width: 12%;
+    aspect-ratio: 1;
+    height: auto!important;
     box-shadow: inset 0 1px 2px rgba(0,0,0,.18)
 }
 
@@ -887,7 +1015,10 @@ body {
 
 .bigPalitra[data-palitra-view=overlap] .colors .color {
     border-radius: 40px;
-    margin-left: -12px;
+    margin-left: -2.5%;
+    width: 12%;
+    aspect-ratio: 1;
+    height: auto!important;
     box-shadow: 0 0 0 2px #fff
 }
 
@@ -897,11 +1028,14 @@ body {
 
 .bigPalitra[data-palitra-view=strokes] .colors {
     overflow: visible;
-    gap: 8px
+    gap: 1.5%
 }
 
 .bigPalitra[data-palitra-view=strokes] .colors .color {
     border-radius: 0;
+    width: 12%;
+    aspect-ratio: 1;
+    height: auto!important;
     clip-path: polygon(8% 12%,22% 0,42% 8%,63% 2%,82% 12%,96% 6%,100% 30%,94% 60%,100% 86%,82% 100%,64% 90%,42% 100%,20% 92%,4% 100%,0 68%,6% 44%);
     transform: rotate(-2deg)
 }
@@ -914,14 +1048,19 @@ body {
     gap: 0;
     overflow: hidden;
     border-radius: 12px;
-    padding: 19px 0;
+    padding: 4% 0;
     flex-wrap: nowrap
 }
 
 .bigPalitra[data-palitra-view=rects] .colors .color {
     flex: 1 1 0;
     border-radius: 0;
-    height: 44px;
+    width: auto;
+    aspect-ratio: auto;
+    height: 0;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    box-sizing: content-box;
     min-width: 0;
     margin: 0
 }
@@ -1551,6 +1690,83 @@ img {
     background-repeat: no-repeat
 }
 
+#autoGuestModal.modal-overlay .modal-card__remembered {
+    display: none
+}
+
+#autoGuestModal.modal-overlay .modal-card.is-remembered-mode .modal-card__remembered {
+    display: block
+}
+
+#autoGuestModal.modal-overlay .modal-card.is-remembered-mode .modal-card__form {
+    display: none
+}
+
+#autoGuestModal.modal-overlay .modal-card__guest-list {
+    list-style: none;
+    margin: 0 0 16px 0;
+    padding: 0
+}
+
+#autoGuestModal.modal-overlay .modal-card__guest-list-item {
+    margin: 0 0 10px 0
+}
+
+#autoGuestModal.modal-overlay .modal-card__guest-list-item:last-child {
+    margin-bottom: 0
+}
+
+#autoGuestModal.modal-overlay .modal-card__guest-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-align: left;
+    text-decoration: none;
+    color: var(--ag-color,#fff);
+    background: color-mix(in srgb,var(--ag-bg,#a7b3d8) 82%,#fff);
+    border: 1px solid color-mix(in srgb,var(--ag-color,#fff) 42%,transparent);
+    box-sizing: border-box
+}
+
+#autoGuestModal.modal-overlay .modal-card__guest-link:hover {
+    border-color: color-mix(in srgb,var(--ag-color,#fff) 72%,transparent)
+}
+
+#autoGuestModal.modal-overlay .modal-card__guest-link .fa {
+    flex-shrink: 0;
+    font-size: 1.1em;
+    line-height: 1
+}
+
+#autoGuestModal.modal-overlay .modal-card__guest-link .modal-card__guest-link-text {
+    flex: 1;
+    min-width: 0
+}
+
+#autoGuestModal.modal-overlay .modal-card__fill-new {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 10px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    color: var(--ag-color,#fff);
+    background: color-mix(in srgb,var(--ag-color,#fff) 18%,transparent);
+    border: 1px solid color-mix(in srgb,var(--ag-color,#fff) 42%,transparent)
+}
+
+#autoGuestModal.modal-overlay .modal-card__fill-new:hover {
+    background: color-mix(in srgb,var(--ag-color,#fff) 28%,transparent)
+}
+
 #autoGuestModal.modal-overlay .modal-card__form {
     margin: 0
 }
@@ -1857,96 +2073,96 @@ a.qr-guest-pill--declined:hover {
 @-moz-keyframes myinv-text-in {
     from {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes myinv-text-in {
     from {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes myinv-text-in {
     from {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes myinv-text-in {
     from {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-moz-keyframes myinv-icon-in {
     from {
         opacity: 0;
-        transform: translateY(12px)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: scale(1) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes myinv-icon-in {
     from {
         opacity: 0;
-        transform: translateY(12px)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: scale(1) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes myinv-icon-in {
     from {
         opacity: 0;
-        transform: translateY(12px)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: scale(1) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes myinv-icon-in {
     from {
         opacity: 0;
-        transform: translateY(12px)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     to {
         opacity: 1;
-        transform: translateY(0)
+        transform: scale(1) rotate(var(--wp-rotate,0deg))
     }
 }
 
@@ -2177,336 +2393,432 @@ a.qr-guest-pill--declined:hover {
 @-moz-keyframes appearHeart {
     0% {
         opacity: 0;
-        transform: scale(0)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes appearHeart {
     0% {
         opacity: 0;
-        transform: scale(0)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes appearHeart {
     0% {
         opacity: 0;
-        transform: scale(0)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes appearHeart {
     0% {
         opacity: 0;
-        transform: scale(0)
+        transform: scale(0) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-moz-keyframes appearPhoto {
     0% {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes appearPhoto {
     0% {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes appearPhoto {
     0% {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes appearPhoto {
     0% {
         opacity: 0;
-        transform: translateY(16px)
+        transform: translateY(16px) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0)
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@-moz-keyframes appearPhotoFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@-webkit-keyframes appearPhotoFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@-o-keyframes appearPhotoFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@keyframes appearPhotoFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@-moz-keyframes appearPhotoFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@-webkit-keyframes appearPhotoFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@-o-keyframes appearPhotoFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
+    }
+}
+
+@keyframes appearPhotoFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-60px) rotate(var(--wp-rotate,0deg))
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-moz-keyframes appearHeartRevers {
     0% {
         opacity: 0;
-        transform: scale(calc(2 * var(--tl-scale,1)))
+        transform: scale(calc(2 * var(--tl-scale,1))) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes appearHeartRevers {
     0% {
         opacity: 0;
-        transform: scale(calc(2 * var(--tl-scale,1)))
+        transform: scale(calc(2 * var(--tl-scale,1))) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes appearHeartRevers {
     0% {
         opacity: 0;
-        transform: scale(calc(2 * var(--tl-scale,1)))
+        transform: scale(calc(2 * var(--tl-scale,1))) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes appearHeartRevers {
     0% {
         opacity: 0;
-        transform: scale(calc(2 * var(--tl-scale,1)))
+        transform: scale(calc(2 * var(--tl-scale,1))) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: scale(var(--tl-scale,1))
+        transform: scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-moz-keyframes appearFromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-60px) scale(var(--tl-scale,1))
+        transform: translateX(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes appearFromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-60px) scale(var(--tl-scale,1))
+        transform: translateX(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes appearFromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-60px) scale(var(--tl-scale,1))
+        transform: translateX(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes appearFromLeft {
     0% {
         opacity: 0;
-        transform: translateX(-60px) scale(var(--tl-scale,1))
+        transform: translateX(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-moz-keyframes appearFromRight {
     0% {
         opacity: 0;
-        transform: translateX(60px) scale(var(--tl-scale,1))
+        transform: translateX(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes appearFromRight {
     0% {
         opacity: 0;
-        transform: translateX(60px) scale(var(--tl-scale,1))
+        transform: translateX(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes appearFromRight {
     0% {
         opacity: 0;
-        transform: translateX(60px) scale(var(--tl-scale,1))
+        transform: translateX(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes appearFromRight {
     0% {
         opacity: 0;
-        transform: translateX(60px) scale(var(--tl-scale,1))
+        transform: translateX(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(var(--tl-scale,1))
+        transform: translateX(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-moz-keyframes appearFromBottom {
     0% {
         opacity: 0;
-        transform: translateY(60px) scale(var(--tl-scale,1))
+        transform: translateY(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes appearFromBottom {
     0% {
         opacity: 0;
-        transform: translateY(60px) scale(var(--tl-scale,1))
+        transform: translateY(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes appearFromBottom {
     0% {
         opacity: 0;
-        transform: translateY(60px) scale(var(--tl-scale,1))
+        transform: translateY(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes appearFromBottom {
     0% {
         opacity: 0;
-        transform: translateY(60px) scale(var(--tl-scale,1))
+        transform: translateY(60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-moz-keyframes appearFromTop {
     0% {
         opacity: 0;
-        transform: translateY(-60px) scale(var(--tl-scale,1))
+        transform: translateY(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-webkit-keyframes appearFromTop {
     0% {
         opacity: 0;
-        transform: translateY(-60px) scale(var(--tl-scale,1))
+        transform: translateY(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @-o-keyframes appearFromTop {
     0% {
         opacity: 0;
-        transform: translateY(-60px) scale(var(--tl-scale,1))
+        transform: translateY(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
 @keyframes appearFromTop {
     0% {
         opacity: 0;
-        transform: translateY(-60px) scale(var(--tl-scale,1))
+        transform: translateY(-60px) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 
     100% {
         opacity: 1;
-        transform: translateY(0) scale(var(--tl-scale,1))
+        transform: translateY(0) scale(var(--tl-scale,1)) rotate(var(--wp-rotate,0deg))
     }
 }
 
@@ -3059,16 +3371,17 @@ a.qr-guest-pill--declined:hover {
     --wp-brand-logo-black: url("/src/img/wedding/logo_black_new.png");
     --wp-brand-newlogo-min: url("/src/img/wedding/logo.png");
     --wp-has-onboarding: 1;
-    --wp-electro-on-1: url("/src/img/wedding/electro_on_1.png?v=2");
-    --wp-electro-on-2: url("/src/img/wedding/electro_on_2.png?v=2");
-    --wp-electro-on-3: url("/src/img/wedding/electro_on_3.png?v=2");
-    --wp-electro-on-4: url("/src/img/wedding/electro_on_4.png?v=2");
-    --wp-electro-on-5: url("/src/img/wedding/electro_on_5.png?v=2");
-    --wp-paper-on-1: url("/src/img/wedding/paper_on_1.png?v=2");
-    --wp-paper-on-2: url("/src/img/wedding/paper_on_2.png?v=2");
-    --wp-variant-on-1: url("/src/img/on_style_1.jpeg?v=2");
-    --wp-variant-on-2: url("/src/img/on_style_2.png?v=2");
-    --wp-variant-on-3: url("/src/img/on_style_3.png?v=2");
+    --wp-electro-on-1: url("/src/img/wedding/electro_on_1.png?v=3");
+    --wp-electro-on-2: url("/src/img/wedding/electro_on_2.png?v=3");
+    --wp-electro-on-3: url("/src/img/wedding/electro_on_3.png?v=3");
+    --wp-electro-on-4: url("/src/img/wedding/electro_on_4.png?v=3");
+    --wp-electro-on-5: url("/src/img/wedding/electro_on_5.png?v=3");
+    --wp-electro-on-6: url("/src/img/wedding/electro_on_6.png?v=3");
+    --wp-paper-on-1: url("/src/img/wedding/paper_on_1.png?v=3");
+    --wp-paper-on-2: url("/src/img/wedding/paper_on_2.png?v=3");
+    --wp-variant-on-1: url("/src/img/on_style_1.jpeg?v=3");
+    --wp-variant-on-2: url("/src/img/on_style_2.png?v=3");
+    --wp-variant-on-3: url("/src/img/on_style_3.png?v=3");
     --wp-save-btn-light: #ff7a56;
     --wp-save-btn: #f3623e;
     --wp-save-btn-dark: #d94e2c;
