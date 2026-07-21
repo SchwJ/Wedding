@@ -3371,17 +3371,17 @@ a.qr-guest-pill--declined:hover {
     --wp-brand-logo-black: url("/src/img/wedding/logo_black_new.png");
     --wp-brand-newlogo-min: url("/src/img/wedding/logo.png");
     --wp-has-onboarding: 1;
-    --wp-electro-on-1: url("/src/img/wedding/electro_on_1.png?v=3");
-    --wp-electro-on-2: url("/src/img/wedding/electro_on_2.png?v=3");
-    --wp-electro-on-3: url("/src/img/wedding/electro_on_3.png?v=3");
-    --wp-electro-on-4: url("/src/img/wedding/electro_on_4.png?v=3");
-    --wp-electro-on-5: url("/src/img/wedding/electro_on_5.png?v=3");
-    --wp-electro-on-6: url("/src/img/wedding/electro_on_6.png?v=3");
-    --wp-paper-on-1: url("/src/img/wedding/paper_on_1.png?v=3");
-    --wp-paper-on-2: url("/src/img/wedding/paper_on_2.png?v=3");
-    --wp-variant-on-1: url("/src/img/on_style_1.jpeg?v=3");
-    --wp-variant-on-2: url("/src/img/on_style_2.png?v=3");
-    --wp-variant-on-3: url("/src/img/on_style_3.png?v=3");
+    --wp-electro-on-1: url("/src/img/wedding/electro_on_1.png");
+    --wp-electro-on-2: url("/src/img/wedding/electro_on_2.png");
+    --wp-electro-on-3: url("/src/img/wedding/electro_on_3.png");
+    --wp-electro-on-4: url("/src/img/wedding/electro_on_4.png");
+    --wp-electro-on-5: url("/src/img/wedding/electro_on_5.png");
+    --wp-electro-on-6: url("/src/img/wedding/electro_on_6.png");
+    --wp-paper-on-1: url("/src/img/wedding/paper_on_1.png");
+    --wp-paper-on-2: url("/src/img/wedding/paper_on_2.png");
+    --wp-variant-on-1: url("/src/img/on_style_1.jpeg");
+    --wp-variant-on-2: url("/src/img/on_style_2.png");
+    --wp-variant-on-3: url("/src/img/on_style_3.png");
     --wp-save-btn-light: #ff7a56;
     --wp-save-btn: #f3623e;
     --wp-save-btn-dark: #d94e2c;
@@ -3397,8 +3397,8 @@ a.qr-guest-pill--declined:hover {
  */
 @font-face {
     font-family: 'FontAwesome';
-    src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
-    src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+    src: url('../fonts/fontawesome-webfont.eot');
+    src: url('../fonts/fontawesome-webfont.eot') format('embedded-opentype'),url('../fonts/fontawesome-webfont.woff2') format('woff2'),url('../fonts/fontawesome-webfont.woff') format('woff'),url('../fonts/fontawesome-webfont.ttf') format('truetype'),url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
     font-weight: normal;
     font-style: normal
 }
