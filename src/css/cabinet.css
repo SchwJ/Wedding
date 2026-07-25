@@ -16032,13 +16032,18 @@ a {
     position: relative;
     margin: auto;
     width: 90%;
-    height: 80%;
+    /*height: 80%;*/
     background-position: 50% 50%
 }
 
-.element6,.element7 {
+.element6 {
     width: 100%;
     height: 100%;
+    position: relative
+}
+
+.element7 {
+    width: 100%;
     position: relative
 }
 
@@ -16909,6 +16914,7 @@ button.jscolor,input.jscolor {
 }
 
 .background {
+    /*height: 100%;*/
     /*height: 100%;*/
     width: 100%;
     background: #fff
@@ -27061,6 +27067,10 @@ i.check {
     margin: auto;
     height: 10%;
     transition: all .5s ease-out 0s
+}
+
+.moveBoxHeight {
+    height: unset;
 }
 
 .fullBox {
