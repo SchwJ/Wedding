@@ -4976,7 +4976,7 @@ function getInvs(e, t, n) {
                         fetch(window.location.origin + "/template/invent/startscreen/startscreen.php?user_id=" + e).then((e => e.text())).then((e => {
                                 const t = (new DOMParser).parseFromString(e, "text/html").body.innerHTML;
                                 $("body").append(t);
-                                document.querySelector('script[src="/template/invent/startscreen/startscreen.js"]') || setTimeout(( () => {
+                                document.querySelector('script[src="/Wedding/template/invent/startscreen/startscreen.js"]') || setTimeout(( () => {
                                         const e = document.createElement("script");
                                         e.src = "/template/invent/startscreen/startscreen.js",
                                             document.body.appendChild(e)
