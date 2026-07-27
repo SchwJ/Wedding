@@ -814,22 +814,22 @@ b,strong {
 }
 
 .mp-list ul .img_0 {
-    background-image: url(/src/icons/adv3.svg);
+    background-image: url(/Wedding/src/icons/adv3.svg);
     background-position: 50% 0
 }
 
 .mp-list ul .img_1 {
-    background-image: url(/src/icons/electro.svg);
+    background-image: url(/Wedding/src/icons/electro.svg);
     background-position: 50% 0
 }
 
 .mp-list ul .img_2 {
-    background-image: url(/src/icons/paper.svg);
+    background-image: url(/Wedding/src/icons/paper.svg);
     background-position: 50% 35%
 }
 
 .mp-list ul .img_3 {
-    background-image: url(/src/icons/invite.svg);
+    background-image: url(/Wedding/src/icons/invite.svg);
     background-position: 50% 70%
 }
 
@@ -15214,7 +15214,7 @@ a {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(/src/icons/contacts_placeholder.svg);
+    background-image: url(/Wedding/src/icons/contacts_placeholder.svg);
     flex-shrink: 0
 }
 
@@ -22728,11 +22728,11 @@ body:not(.is-staff) .adminOrDesignerOnly {
     background-color: #ff6b4a;
     background-image: none;
     filter: none;
-    -webkit-mask-image: url(/src/icons/banket_icon_tbl.svg);
+    -webkit-mask-image: url(/Wedding/src/icons/banket_icon_tbl.svg);
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 40px auto;
     -webkit-mask-position: center bottom;
-    mask-image: url(/src/icons/banket_icon_tbl.svg);
+    mask-image: url(/Wedding/src/icons/banket_icon_tbl.svg);
     mask-repeat: no-repeat;
     mask-size: 40px auto;
     mask-position: center bottom
@@ -33318,7 +33318,7 @@ body:not(.constructorPage) .side-nav .footer-item.activeMobile,body:not(.constru
 }
 
 .asap_link:hover .icon_academy {
-    background-image: url(/src/icons/hatw.svg)!important
+    background-image: url(/Wedding/src/icons/hatw.svg)!important
 }
 
 #asap_metrica {
@@ -38576,7 +38576,7 @@ body {
 }
 
 .btn-call2action-gold {
-    background-image: url(/src/icons/mp_gold_button.svg)!important;
+    background-image: url(/Wedding/src/icons/mp_gold_button.svg)!important;
     color: #a55e50;
     text-shadow: 2px 1px 0 rgba(255,255,255,.58)
 }
@@ -42200,7 +42200,7 @@ html[data-event-type=ubiley] .usertab .icon_party_ubiley {
 }
 
 .icon_cool_paper {
-    background: url(/src/icons/paper.svg);
+    background: url(/Wedding/src/icons/paper.svg);
     margin: auto;
     height: 34px;
     width: 131%;
@@ -42211,7 +42211,7 @@ html[data-event-type=ubiley] .usertab .icon_party_ubiley {
 }
 
 .icon_cool_electro {
-    background: url(/src/icons/electro.svg);
+    background: url(/Wedding/src/icons/electro.svg);
     margin: auto;
     height: 34px;
     width: 131%;
@@ -42235,7 +42235,7 @@ html[data-event-type=ubiley] .usertab .icon_party_ubiley {
 }
 
 .icon_cool {
-    background: url(/src/icons/invite.svg);
+    background: url(/Wedding/src/icons/invite.svg);
     margin: auto;
     height: 34px;
     width: 131%;
@@ -42246,7 +42246,7 @@ html[data-event-type=ubiley] .usertab .icon_party_ubiley {
 }
 
 .icon_cool_banket {
-    background: url(/src/icons/banket.svg);
+    background: url(/Wedding/src/icons/banket.svg);
     margin: auto;
     height: 34px;
     width: 131%;
@@ -43760,11 +43760,11 @@ h1 {
         background-color: #ff6b4a;
         background-image: none;
         filter: none;
-        -webkit-mask-image: url(/src/icons/banket_icon_tbl.svg);
+        -webkit-mask-image: url(/Wedding/src/icons/banket_icon_tbl.svg);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-size: 14px auto;
         -webkit-mask-position: center bottom;
-        mask-image: url(/src/icons/banket_icon_tbl.svg);
+        mask-image: url(/Wedding/src/icons/banket_icon_tbl.svg);
         mask-repeat: no-repeat;
         mask-size: 14px auto;
         mask-position: center bottom

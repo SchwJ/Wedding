@@ -238,7 +238,7 @@ body.wp-banket-screen .block#mymain {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url(/src/icons/contacts_placeholder.svg);
+    background-image: url(/Wedding/src/icons/contacts_placeholder.svg);
     flex-shrink: 0
 }
 

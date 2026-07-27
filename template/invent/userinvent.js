@@ -345,7 +345,7 @@ window._ttSvgCache = window._ttSvgCache || {},
         if (window._ttSvgCache[r])
             o(window._ttSvgCache[r]);
         else {
-            var i = "/src/icons/wedding/tt/" + e;
+            var i = "/Wedding/src/icons/wedding/tt/" + e;
             $.get(i, (function(e) {
                     var i = e.replace(/#222222/gi, t).replace(/stroke-width="[^"]*"/gi, "").replace(/<svg /i, '<svg stroke-width="' + n + '" ');
                     window._ttSvgCache[r] = i,
@@ -5187,12 +5187,12 @@ function getInvs(e, t, n) {
                     getUrlVar().user && t.domain && $(".screenshot_iphone .domain strong").text(t.domain),
                         $(".sheet#mainInv").removeClass("hide").css("position", "absolute"),
                         $(".sheet#mainInv").addClass("screenshot_mainInv").css("transform", "rotate(0deg)"),
-                        $(".sheet#mainInv .front").removeClass("hidden").addClass("screenshoter").css("transform", "rotate(0deg)").css("z-index", 1).addClass("clickTo").attr("to", "/cabinet/constructor/paper"),
-                        $(".sheet#mainInv .back").removeClass("hidden").addClass("screenshoter").addClass("screenshot_mainInv").addClass("screenshot_mainInv_back").css("transform", "rotate(0deg)").css("z-index", 0).css("backface-visibility", "inherit").addClass("clickTo").attr("to", "/cabinet/constructor/paper#sheet2"),
-                    wpInvIsPartyProduct(t) || ($(".sheet#palitraPaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_palitraPaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/cabinet/constructor/paper#palitraPaper_control"),
-                        $(".sheet#timetablePaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_timetablePaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/cabinet/constructor/paper#timetablePaper_control")),
+                        $(".sheet#mainInv .front").removeClass("hidden").addClass("screenshoter").css("transform", "rotate(0deg)").css("z-index", 1).addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper"),
+                        $(".sheet#mainInv .back").removeClass("hidden").addClass("screenshoter").addClass("screenshot_mainInv").addClass("screenshot_mainInv_back").css("transform", "rotate(0deg)").css("z-index", 0).css("backface-visibility", "inherit").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#sheet2"),
+                    wpInvIsPartyProduct(t) || ($(".sheet#palitraPaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_palitraPaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#palitraPaper_control"),
+                        $(".sheet#timetablePaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_timetablePaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#timetablePaper_control")),
                         $(".sheet#envelope .front").removeClass("hidden").css("transform", "rotateY(0deg)"),
-                        $(".sheet#envelope").addClass("screenshoter").removeClass("hide").addClass("screenshot_envelope").addClass("clickTo").attr("to", "/cabinet/constructor/paper#envelope_control"),
+                        $(".sheet#envelope").addClass("screenshoter").removeClass("hide").addClass("screenshot_envelope").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#envelope_control"),
                     $("*").is(".sheet#envelope [action=envelope_text1]") && (fontSize = $(".sheet#envelope [action=envelope_text1]").css("fontSize").slice(0, -2),
                         $(".sheet#envelope [action=envelope_text1]").css("fontSize", 1.416 * fontSize)),
                     $("*").is(".sheet#envelope [action=envelope_text2]") && (fontSize = $(".sheet#envelope [action=envelope_text2]").css("fontSize").slice(0, -2),
@@ -5218,12 +5218,12 @@ function getInvs(e, t, n) {
                         $(".allsheet").append('<div class="screenshot_wood"></div>'),
                         $(".sheet#mainInv").removeClass("hide").css("position", "absolute"),
                         $(".sheet#mainInv").addClass("screenshot_mainInv").css("transform", "rotate(0deg)"),
-                        $(".sheet#mainInv .front").removeClass("hidden").addClass("screenshoter").css("transform", "rotate(0deg)").css("z-index", 1).addClass("clickTo").attr("to", "/cabinet/constructor/paper"),
-                        $(".sheet#mainInv .back").removeClass("hidden").addClass("screenshoter").addClass("screenshot_mainInv").addClass("screenshot_mainInv_back").css("transform", "rotate(0deg)").css("z-index", 0).css("backface-visibility", "inherit").addClass("clickTo").attr("to", "/cabinet/constructor/paper#sheet2"),
-                    wpInvIsPartyProduct(t) || ($(".sheet#palitraPaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_palitraPaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/cabinet/constructor/paper#palitraPaper_control"),
-                        $(".sheet#timetablePaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_timetablePaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/cabinet/constructor/paper#timetablePaper_control")),
+                        $(".sheet#mainInv .front").removeClass("hidden").addClass("screenshoter").css("transform", "rotate(0deg)").css("z-index", 1).addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper"),
+                        $(".sheet#mainInv .back").removeClass("hidden").addClass("screenshoter").addClass("screenshot_mainInv").addClass("screenshot_mainInv_back").css("transform", "rotate(0deg)").css("z-index", 0).css("backface-visibility", "inherit").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#sheet2"),
+                    wpInvIsPartyProduct(t) || ($(".sheet#palitraPaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_palitraPaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#palitraPaper_control"),
+                        $(".sheet#timetablePaper").removeClass("hide").addClass("screenshoter").addClass("screenshot_timetablePaper").css("transform", "rotate(0deg)").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#timetablePaper_control")),
                         $(".sheet#envelope .front").removeClass("hidden").css("transform", "rotateY(0deg)"),
-                        $(".sheet#envelope").addClass("screenshoter").removeClass("hide").addClass("screenshot_envelope").addClass("clickTo").attr("to", "/cabinet/constructor/paper#envelope_control"),
+                        $(".sheet#envelope").addClass("screenshoter").removeClass("hide").addClass("screenshot_envelope").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#envelope_control"),
                     $("*").is(".sheet#envelope [action=envelope_text1]") && (fontSize = $(".sheet#envelope [action=envelope_text1]").css("fontSize").slice(0, -2),
                         $(".sheet#envelope [action=envelope_text1]").css("fontSize", 1.416 * fontSize)),
                     $("*").is(".sheet#envelope [action=envelope_text2]") && (fontSize = $(".sheet#envelope [action=envelope_text2]").css("fontSize").slice(0, -2),
@@ -5239,13 +5239,13 @@ function getInvs(e, t, n) {
                     $(".allsheet .sheet").length < 2 && (contentHTML = $(".content").html(),
                         $(".content").html('<div class="allsheet" textplace="module_text" style="margin-top: 0px;">' + contentHTML + "</div>"),
                         $(".allsheet .sheet").attr("id", "mainInv")),
-                    $(".allsheet .sheet").length < 7 && $(".allsheet").html('<a to="/cabinet/constructor/paper/#seatingCard_control" class="clickTo getTableCardonFinish">Сгенерируйте комплекты карточек для банкета, перейдя на страницу конструктора.<br><a>Перейти в конструктор</a></a>'),
+                    $(".allsheet .sheet").length < 7 && $(".allsheet").html('<a to="/Wedding/cabinet/constructor/paper/#seatingCard_control" class="clickTo getTableCardonFinish">Сгенерируйте комплекты карточек для банкета, перейдя на страницу конструктора.<br><a>Перейти в конструктор</a></a>'),
                         $("body").css("transform", "scale(0.75)").css("overflow", "hidden"),
                         $(".allsheet").append('<div class="screenshot_seating"></div><div class="clips_seating"></div><div class="spoon_seating"></div>'),
                         !wpInvIsPartyProduct(t)) {
-                        $(".sheet#tableCard").removeClass("hide").addClass("screenshoter").addClass("screenshot_tableCard").css("transform", "rotate(2deg) scale(0.8)").addClass("clickTo").attr("to", "/cabinet/constructor/paper#tableCard_control"),
-                            $(".sheet#seatingCard").removeClass("hide").addClass("screenshoter").addClass("screenshot_seatingCard").css("transform", "rotate(2deg) scale(0.9)").addClass("clickTo").attr("to", "/cabinet/constructor/paper#seatingCard_control"),
-                            $(".sheet#seatingPlan").removeClass("hide").addClass("screenshoter").addClass("screenshot_seatingPlan").css("transform", "rotate(2deg) scale(0.96)").css("right", "0px").addClass("clickTo").attr("to", "/cabinet/constructor/paper#seatingPlan_control"),
+                        $(".sheet#tableCard").removeClass("hide").addClass("screenshoter").addClass("screenshot_tableCard").css("transform", "rotate(2deg) scale(0.8)").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#tableCard_control"),
+                            $(".sheet#seatingCard").removeClass("hide").addClass("screenshoter").addClass("screenshot_seatingCard").css("transform", "rotate(2deg) scale(0.9)").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#seatingCard_control"),
+                            $(".sheet#seatingPlan").removeClass("hide").addClass("screenshoter").addClass("screenshot_seatingPlan").css("transform", "rotate(2deg) scale(0.96)").css("right", "0px").addClass("clickTo").attr("to", "/Wedding/cabinet/constructor/paper#seatingPlan_control"),
                         1 == getUrlVar().iframe && ($(".sheet#seatingPlan").css("right", "0px"),
                             $(".sheet#seatingCard").css("left", "161px"));
                         var g = $(".sheet#seatingCard .textLine[action=guest_name]");
@@ -5405,7 +5405,7 @@ function getInvs(e, t, n) {
                         $(".header_opros").removeClass("hide"),
                         $(".goSummary a").attr("href", "?user=" + e + "&opros_result=1"),
                         $("#opros").css("max-width", "1128px"),
-                        $(".hideFromBuild").first().after('<div class="commentYes" style="max-width: 1128px; margin: 20px;"><b>Опрос выключен в конструкторе</b><br> Чтобы гости могли проходить опрос <a style="text-decoration: underline;" href="/cabinet/constructor/electro/">перейдите в конструктор</a> и включите модуль Опрос.</div>'),
+                        $(".hideFromBuild").first().after('<div class="commentYes" style="max-width: 1128px; margin: 20px;"><b>Опрос выключен в конструкторе</b><br> Чтобы гости могли проходить опрос <a style="text-decoration: underline;" href="/Wedding/cabinet/constructor/electro/">перейдите в конструктор</a> и включите модуль Опрос.</div>'),
                         $.ajax({
                             url: "template/invent/userinvent.php",
                             data: {
